@@ -48,6 +48,8 @@ void saveImage () {
    cout << "Enter the target image file name: ";
    cin >> imageFileName;
 
+//   doSomethingForImage();
+
    // Add to it .bmp extension and load image
    strcat (imageFileName, ".bmp");
    writeGSBMP(imageFileName, image);
@@ -61,12 +63,12 @@ void doSomethingForImage() {
 /* Example code to convert to BW the image
    A better version should NOt use 127 but the
    average of the pixels
-
+*/
         if (image[i][j] > 127)
             image[i][j] = 255;
         else
             image[i][j] = 0;
-*/
+
 // do something with the image
     }
   }
