@@ -24,14 +24,14 @@ void invertFilter(); // Action 2
 void darkenAndLightenImage(); // Action 5
 void enlargeImage(); // Action 8
 void shuffleImage(); // Action b
-void blackAndWhiteFilter(); // Action 1
 void mergeFilter(); // Action 3
-void flipImage(); // Action 4
 void rotateImage(); // Action 6
-void detectImageEdges(); // Action 7
 void shrinkImage(); // Action 9
-void mirrorImage(); // Action a
 void blurImage(); // Action c
+void blackAndWhiteFilter(); // Action 1
+void flipImage(); // Action 4
+void detectImageEdges(); // Action 7
+void mirrorImage(); // Action a
 // End menu functions
 
 int main() {
@@ -146,18 +146,8 @@ void shuffleImage() {
 
 }
 
-// Action 1
-void blackAndWhiteFilter() {
-
-}
-
 // Action 3 - Youssef
 void mergeFilter() {
-
-}
-
-// Action 4
-void flipImage() {
 
 }
 
@@ -186,7 +176,7 @@ void rotateImage() {
         strcat(imageFileNameOutput, imageFileName);
         writeGSBMP(imageFileNameOutput, mat2);
 
-    }else if(degree == 180){
+    } else if (degree == 180) {
 
         unsigned char mat2[SIZE][SIZE];
 
@@ -204,7 +194,7 @@ void rotateImage() {
         strcat(imageFileNameOutput, imageFileName);
         writeGSBMP(imageFileNameOutput, mat2);
 
-    }else if(degree == 270){
+    } else if (degree == 270) {
 
         unsigned char mat2[SIZE][SIZE];
 
@@ -222,7 +212,7 @@ void rotateImage() {
         strcat(imageFileNameOutput, imageFileName);
         writeGSBMP(imageFileNameOutput, mat2);
 
-    }else if(degree == 360){
+    } else if (degree == 360) {
 
         char imageFileNameOutput[100] = "Rotated-360-";
         strcat(imageFileNameOutput, imageFileName);
@@ -232,23 +222,34 @@ void rotateImage() {
 
 }
 
-// Action 7
-void detectImageEdges() {
-
-}
-
 // Action 9 - Youssef
 void shrinkImage() {
 
-}
-
-// Action a
-void mirrorImage() {
 
 }
 
 // Action c - Youssef
 void blurImage() {
+
+}
+
+// Action 1
+void blackAndWhiteFilter() {
+
+}
+
+// Action 4
+void flipImage() {
+
+}
+
+// Action 7
+void detectImageEdges() {
+
+}
+
+// Action a
+void mirrorImage() {
 
 }
 
