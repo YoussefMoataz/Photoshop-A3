@@ -5,9 +5,15 @@ Student with biggest does filters 3, 6, 9, c - Youssef
  */
 
 #include <iostream>
+#include <cstring>
+#include <iomanip>
 #include "bmplib.cpp"
 
 using namespace std;
+
+unsigned char image[SIZE][SIZE];
+
+char imageFileName[50];
 
 void getUserChoice(); // Starting function
 void loadImage(); // Get the image file name and load it
@@ -29,7 +35,9 @@ void blurImage(); // Action c
 // End menu functions
 
 int main() {
+
     cout << "  --- Welcome to our Photoshop ! ---  " << endl;
+
     getUserChoice();
 
     return 0;
@@ -101,6 +109,16 @@ void getUserChoice() {
 
 void loadImage() {
 
+
+
+    // Get gray scale image file name
+    cout << "Enter the source image file name: ";
+    cin >> imageFileName;
+
+    // Add to it .bmp extension and load image
+    strcat(imageFileName, ".bmp");
+    readGSBMP(imageFileName, image);
+
 }
 
 // Action s
@@ -145,6 +163,22 @@ void flipImage() {
 
 // Action 6 - Youssef
 void rotateImage() {
+
+    unsigned char mat2[SIZE][SIZE];
+
+    for (int i = 0; i < SIZE; ++i) {
+
+        for (int j = 0; j < SIZE; ++j) {
+
+            mat2[j][SIZE - 1 - i] = image[i][j];
+
+        }
+
+    }
+
+    char imageFileNameOutput[100] = "Rotated-";
+    strcat (imageFileNameOutput, imageFileName);
+    writeGSBMP(imageFileNameOutput, mat2);
 
 }
 
