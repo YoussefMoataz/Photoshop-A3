@@ -3,39 +3,41 @@
 
 using namespace std;
 
-void getUserChoice();
-void loadImage();
-void saveImage();
-void invertFilter();
-void darkenAndLightenImage();
-void enlargeImage();
-void shuffleImage();
-void blackAndWhiteFilter();
-void mergeFilter();
-void flipImage();
-void rotateImage();
-void detectImageEdges();
-void shrinkImage();
-void mirrorImage();
-void blurImage();
+void getUserChoice(); // Starting function
+void loadImage(); // Get the image file name and load it
 
-int main()
-{
-    cout << "Welcome to our Photoshop ! " << endl;
+// Start menu functions
+void saveImage(); // Action s
+void invertFilter(); // Action 2
+void darkenAndLightenImage(); // Action 5
+void enlargeImage(); // Action 8
+void shuffleImage(); // Action b
+void blackAndWhiteFilter(); // Action 1
+void mergeFilter(); // Action 3
+void flipImage(); // Action 4
+void rotateImage(); // Action 6
+void detectImageEdges(); // Action 7
+void shrinkImage(); // Action 9
+void mirrorImage(); // Action a
+void blurImage(); // Action c
+// End menu functions
+
+int main() {
+    cout << "  --- Welcome to our Photoshop ! ---  " << endl;
     getUserChoice();
 
     return 0;
 }
 
-void getUserChoice()
-{
-    while (true)
-    {
+// Starting function
+void getUserChoice() {
+    while (true) {
         string choice;
-        
+
         loadImage();
 
-        cout << endl << endl;
+        cout << endl;
+        cout << "Ahlan ya user ya habibi" << endl;
         cout << "Please select a filter to apply or 0 to exit: " << endl;
         cout << "1- Black & White Filter " << endl;
         cout << "2- Invert Filter " << endl;
@@ -51,68 +53,39 @@ void getUserChoice()
         cout << "c- Blur Image " << endl;
         cout << "s- Save the image to a file " << endl;
         cout << "0- Exit " << endl;
-        
+
 
         cin >> choice;
-        if(choice == "0")
-        {
-            cout << "Thanks for using our photoshop, BYE !" << endl; 
+        if (choice == "0") {
+            cout << "Thanks for using our photoshop, Bye !" << endl;
             break;
-        }
-        else if(choice == "1")
-        {
+        } else if (choice == "1") {
             blackAndWhiteFilter();
-        }
-        else if(choice == "2")
-        {
+        } else if (choice == "2") {
             invertFilter();
-        }
-        else if(choice == "3")
-        {
+        } else if (choice == "3") {
             mergeFilter();
-        }
-        else if(choice == "4")
-        {
+        } else if (choice == "4") {
             flipImage();
-        }
-        else if(choice == "5")
-        {
+        } else if (choice == "5") {
             darkenAndLightenImage();
-        }
-        else if(choice == "6")
-        {
-            rotateImage();   
-        }
-        else if(choice == "7")
-        {
+        } else if (choice == "6") {
+            rotateImage();
+        } else if (choice == "7") {
             detectImageEdges();
-        }
-        else if(choice == "8")
-        {
+        } else if (choice == "8") {
             enlargeImage();
-        }
-        else if(choice == "9")
-        {
+        } else if (choice == "9") {
             shrinkImage();
-        }
-        else if(choice == "a")
-        {
+        } else if (choice == "a") {
             mirrorImage();
-        }
-        else if(choice == "b")
-        {
+        } else if (choice == "b") {
             shuffleImage();
-        }
-        else if(choice == "c")
-        {
+        } else if (choice == "c") {
             blurImage();
-        }
-        else if(choice == "s")
-        {
+        } else if (choice == "s") {
             saveImage();
-        }
-        else
-        {
+        } else {
             cout << "Wrong input ! " << endl;
         }
 
@@ -120,74 +93,73 @@ void getUserChoice()
 
 }
 
-void loadImage()
-{
+void loadImage() {
 
 }
 
-void saveImage()
-{
+// Action s
+void saveImage() {
 
 }
 
-void invertFilter()
-{
+// Action 2
+void invertFilter() {
 
 }
 
-void darkenAndLightenImage()
-{
+// Action 5
+void darkenAndLightenImage() {
 
 }
 
-void enlargeImage()
-{
+// Action 8
+void enlargeImage() {
 
 }
 
-void shuffleImage()
-{
+// Action b
+void shuffleImage() {
 
 }
 
-void blackAndWhiteFilter()
-{
+// Action 1
+void blackAndWhiteFilter() {
 
 }
 
-void mergeFilter()
-{
+// Action 3
+void mergeFilter() {
 
 }
 
-void flipImage()
-{
+// Action 4
+void flipImage() {
 
 }
 
-void rotateImage()
-{
+// Action 6
+void rotateImage() {
 
 }
 
-void detectImageEdges()
-{
+// Action 7
+void detectImageEdges() {
 
 }
 
-void shrinkImage()
-{
+// Action 9
+void shrinkImage() {
 
 }
 
-void mirrorImage()
-{
+// Action a
+void mirrorImage() {
 
 }
 
-void blurImage()
-{
+// Action c
+void blurImage() {
 
 }
 
-
+// End of the file
