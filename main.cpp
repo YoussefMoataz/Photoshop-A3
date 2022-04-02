@@ -119,7 +119,7 @@ void loadImage() {
     char imageFileName[50];
 
     // Get gray scale image file name
-    cout << "Enter the source image file name: ";
+    cout << "Enter the source image file name (0 to continue using the same image if available): ";
     cin >> imageFileName;
 
     // Add to it .bmp extension and load image
