@@ -3,7 +3,7 @@ Student with smallest ID does filters 1, 4, 7, a - Mohamed
 Student with middle ID does filters 2, 5, 8, b - Seif
 Student with biggest does filters 3, 6, 9, c - Youssef
  */
-
+////
 #include <iostream>
 #include <cstring>
 #include <iomanip>
@@ -12,7 +12,6 @@ Student with biggest does filters 3, 6, 9, c - Youssef
 using namespace std;
 
 unsigned char image[SIZE][SIZE];
-
 
 void getUserChoice(); // Starting function
 void loadImage(); // Get the image file name and load it
@@ -47,8 +46,6 @@ void getUserChoice() {
     while (true) {
         string choice;
 
-        loadImage();
-
         cout << endl;
         cout << "Ahlan ya user ya habibi" << endl;
         cout << "Please select a filter to apply or 0 to exit: " << endl;
@@ -73,28 +70,40 @@ void getUserChoice() {
             cout << "Thanks for using our photoshop, Bye !" << endl;
             break;
         } else if (choice == "1") {
+            loadImage();
             blackAndWhiteFilter();
         } else if (choice == "2") {
+            loadImage();
             invertFilter();
         } else if (choice == "3") {
+            loadImage();
             mergeFilter();
         } else if (choice == "4") {
+            loadImage();
             flipImage();
         } else if (choice == "5") {
+            loadImage();
             darkenAndLightenImage();
         } else if (choice == "6") {
+            loadImage();
             rotateImage();
         } else if (choice == "7") {
+            loadImage();
             detectImageEdges();
         } else if (choice == "8") {
+            loadImage();
             enlargeImage();
         } else if (choice == "9") {
+            loadImage();
             shrinkImage();
         } else if (choice == "a") {
+            loadImage();
             mirrorImage();
         } else if (choice == "b") {
+            loadImage();
             shuffleImage();
         } else if (choice == "c") {
+            loadImage();
             blurImage();
         } else if (choice == "s") {
             saveImage();
@@ -138,6 +147,7 @@ void saveImage() {
 // Action 2
 void invertFilter() {
 
+
 }
 
 // Action 5
@@ -179,9 +189,15 @@ void mergeFilter() {
 
     }
 
-    char imageFileNameOutput[100] = "Merged-";
-    strcat(imageFileNameOutput, imageFileName);
-    writeGSBMP(imageFileNameOutput, merged);
+    for (int i = 0; i < SIZE; ++i) {
+
+        for (int j = 0; j < SIZE; ++j) {
+
+            image[i][j] = merged[i][j];
+
+        }
+
+    }
 
 }
 
@@ -206,9 +222,15 @@ void rotateImage() {
 
         }
 
-        char imageFileNameOutput[100] = "Rotated-90-";
-        strcat(imageFileNameOutput, imageFileName);
-        writeGSBMP(imageFileNameOutput, mat2);
+        for (int i = 0; i < SIZE; ++i) {
+
+            for (int j = 0; j < SIZE; ++j) {
+
+                image[i][j] = mat2[i][j];
+
+            }
+
+        }
 
     } else if (degree == 180) {
 
@@ -224,9 +246,15 @@ void rotateImage() {
 
         }
 
-        char imageFileNameOutput[100] = "Rotated-180-";
-        strcat(imageFileNameOutput, imageFileName);
-        writeGSBMP(imageFileNameOutput, mat2);
+        for (int i = 0; i < SIZE; ++i) {
+
+            for (int j = 0; j < SIZE; ++j) {
+
+                image[i][j] = mat2[i][j];
+
+            }
+
+        }
 
     } else if (degree == 270) {
 
@@ -242,15 +270,27 @@ void rotateImage() {
 
         }
 
-        char imageFileNameOutput[100] = "Rotated-270-";
-        strcat(imageFileNameOutput, imageFileName);
-        writeGSBMP(imageFileNameOutput, mat2);
+        for (int i = 0; i < SIZE; ++i) {
+
+            for (int j = 0; j < SIZE; ++j) {
+
+                image[i][j] = mat2[i][j];
+
+            }
+
+        }
 
     } else if (degree == 360) {
 
-        char imageFileNameOutput[100] = "Rotated-360-";
-        strcat(imageFileNameOutput, imageFileName);
-        writeGSBMP(imageFileNameOutput, image);
+        for (int i = 0; i < SIZE; ++i) {
+
+            for (int j = 0; j < SIZE; ++j) {
+
+                image[i][j] = image[i][j];
+
+            }
+
+        }
 
     }
 
@@ -295,9 +335,15 @@ void shrinkImage() {
 
         }
 
-        char imageFileNameOutput[100] = "Shrink-2-";
-        strcat(imageFileNameOutput, imageFileName);
-        writeGSBMP(imageFileNameOutput, mat2);
+        for (int i = 0; i < SIZE; ++i) {
+
+            for (int j = 0; j < SIZE; ++j) {
+
+                image[i][j] = mat2[i][j];
+
+            }
+
+        }
 
     }else if (shrinkRatio == "1/3") {
 
@@ -331,9 +377,15 @@ void shrinkImage() {
 
         }
 
-        char imageFileNameOutput[100] = "Shrink-3-";
-        strcat(imageFileNameOutput, imageFileName);
-        writeGSBMP(imageFileNameOutput, mat2);
+        for (int i = 0; i < SIZE; ++i) {
+
+            for (int j = 0; j < SIZE; ++j) {
+
+                image[i][j] = mat2[i][j];
+
+            }
+
+        }
 
     }else if (shrinkRatio == "1/4") {
 
@@ -367,9 +419,15 @@ void shrinkImage() {
 
         }
 
-        char imageFileNameOutput[100] = "Shrink-4-";
-        strcat(imageFileNameOutput, imageFileName);
-        writeGSBMP(imageFileNameOutput, mat2);
+        for (int i = 0; i < SIZE; ++i) {
+
+            for (int j = 0; j < SIZE; ++j) {
+
+                image[i][j] = mat2[i][j];
+
+            }
+
+        }
 
     }
 
