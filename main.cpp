@@ -225,6 +225,119 @@ void rotateImage() {
 // Action 9 - Youssef
 void shrinkImage() {
 
+    cout << "Shrink to (1/2), (1/3) or (1/4)?";
+    string shrinkRatio;
+    cin >> shrinkRatio;
+
+    if (shrinkRatio == "1/2") {
+
+        unsigned char mat2[SIZE][SIZE];
+
+        int m = 0, n = 0;
+
+        for (int i = 0; i < SIZE; i += 2, m++) {
+
+            n = 0;
+
+            for (int j = 0; j < SIZE; j += 2, n++) {
+
+                mat2[m][n] = image[i][j];
+
+            }
+
+        }
+
+        for (int i = 0; i < SIZE; i += 1) {
+
+            for (int j = 0; j < SIZE; j += 1) {
+
+                if (i < m && j < n) {
+                    continue;
+                } else {
+                    mat2[i][j] = 255;
+                }
+
+            }
+
+        }
+
+        char imageFileNameOutput[100] = "Shrink-2-";
+        strcat(imageFileNameOutput, imageFileName);
+        writeGSBMP(imageFileNameOutput, mat2);
+
+    }else if (shrinkRatio == "1/3") {
+
+        unsigned char mat2[SIZE][SIZE];
+
+        int m = 0, n = 0;
+
+        for (int i = 0; i < SIZE; i += 3, m++) {
+
+            n = 0;
+
+            for (int j = 0; j < SIZE; j += 3, n++) {
+
+                mat2[m][n] = image[i][j];
+
+            }
+
+        }
+
+        for (int i = 0; i < SIZE; i += 1) {
+
+            for (int j = 0; j < SIZE; j += 1) {
+
+                if (i < m && j < n) {
+                    continue;
+                } else {
+                    mat2[i][j] = 255;
+                }
+
+            }
+
+        }
+
+        char imageFileNameOutput[100] = "Shrink-3-";
+        strcat(imageFileNameOutput, imageFileName);
+        writeGSBMP(imageFileNameOutput, mat2);
+
+    }else if (shrinkRatio == "1/4") {
+
+        unsigned char mat2[SIZE][SIZE];
+
+        int m = 0, n = 0;
+
+        for (int i = 0; i < SIZE; i += 4, m++) {
+
+            n = 0;
+
+            for (int j = 0; j < SIZE; j += 4, n++) {
+
+                mat2[m][n] = image[i][j];
+
+            }
+
+        }
+
+        for (int i = 0; i < SIZE; i += 1) {
+
+            for (int j = 0; j < SIZE; j += 1) {
+
+                if (i < m && j < n) {
+                    continue;
+                } else {
+                    mat2[i][j] = 255;
+                }
+
+            }
+
+        }
+
+        char imageFileNameOutput[100] = "Shrink-4-";
+        strcat(imageFileNameOutput, imageFileName);
+        writeGSBMP(imageFileNameOutput, mat2);
+
+    }
 
 }
 
