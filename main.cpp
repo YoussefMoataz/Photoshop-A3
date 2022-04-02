@@ -139,9 +139,9 @@ void saveImage() {
     cin >> imageFileName;
 
     // Add to it .bmp extension and load image
-    strcat (imageFileName, ".bmp");
+    strcat(imageFileName, ".bmp");
     writeGSBMP(imageFileName, image);
-    
+
 }
 
 // Action 2
@@ -169,7 +169,7 @@ void shuffleImage() {
 void mergeFilter() {
 
     cout << "Please enter name of image file to merge with:";
-    char otherImage [100];
+    char otherImage[100];
 
     cin >> otherImage;
     strcat(otherImage, ".bmp");
@@ -345,7 +345,7 @@ void shrinkImage() {
 
         }
 
-    }else if (shrinkRatio == "1/3") {
+    } else if (shrinkRatio == "1/3") {
 
         unsigned char mat2[SIZE][SIZE];
 
@@ -387,7 +387,7 @@ void shrinkImage() {
 
         }
 
-    }else if (shrinkRatio == "1/4") {
+    } else if (shrinkRatio == "1/4") {
 
         unsigned char mat2[SIZE][SIZE];
 
