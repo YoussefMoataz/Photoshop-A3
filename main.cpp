@@ -204,6 +204,30 @@ void rotateImage() {
         strcat(imageFileNameOutput, imageFileName);
         writeGSBMP(imageFileNameOutput, mat2);
 
+    }else if(degree == 270){
+
+        unsigned char mat2[SIZE][SIZE];
+
+        for (int i = 0; i < SIZE; ++i) {
+
+            for (int j = 0; j < SIZE; ++j) {
+
+                mat2[SIZE - 1 - j][i] = image[i][j];
+
+            }
+
+        }
+
+        char imageFileNameOutput[100] = "Rotated-270-";
+        strcat(imageFileNameOutput, imageFileName);
+        writeGSBMP(imageFileNameOutput, mat2);
+
+    }else if(degree == 360){
+
+        char imageFileNameOutput[100] = "Rotated-360-";
+        strcat(imageFileNameOutput, imageFileName);
+        writeGSBMP(imageFileNameOutput, image);
+
     }
 
 }
