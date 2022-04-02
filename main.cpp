@@ -435,6 +435,21 @@ void shrinkImage() {
 // Action c - Youssef
 void blurImage() {
 
+    for (int i = 2; i < SIZE; i += 3) {
+        for (int j = 2; j < SIZE; j += 3) {
+
+            image[i - 1][j - 1] = (image[i][j] + image[i - 1][j - 1])/ 2;
+            image[i][j - 1] = (image[i][j] + image[i][j - 1]) / 2;
+            image[i - 1][j] = (image[i][j] + image[i - 1][j]) / 2;
+            image[i - 2][j - 2] = (image[i][j] + image[i - 2][j - 2]) / 2;
+            image[i - 2][j] = (image[i][j] + image[i - 2][j]) / 2;
+            image[i - 1][j - 2] = (image[i][j] + image[i - 2][j - 2]) / 2;
+            image[i][j - 2] = (image[i][j] + image[i][j - 2]) / 2;
+            image[i - 2][j - 1] = (image[i][j] + image[i - 2][j - 1]) / 2;
+
+        }
+    }
+
 }
 
 // Action 1
