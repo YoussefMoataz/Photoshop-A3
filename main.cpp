@@ -127,7 +127,7 @@ void blackAndWhiteFilter() {
 
 }
 
-// Action 3
+// Action 3 - Youssef
 void mergeFilter() {
 
 }
@@ -137,7 +137,7 @@ void flipImage() {
 
 }
 
-// Action 6
+// Action 6 - Youssef
 void rotateImage() {
 
 }
@@ -147,7 +147,7 @@ void detectImageEdges() {
 
 }
 
-// Action 9
+// Action 9 - Youssef
 void shrinkImage() {
 
 }
@@ -157,7 +157,7 @@ void mirrorImage() {
 
 }
 
-// Action c
+// Action c - Youssef
 void blurImage() {
 
 }
