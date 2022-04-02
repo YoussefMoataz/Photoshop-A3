@@ -13,7 +13,6 @@ using namespace std;
 
 unsigned char image[SIZE][SIZE];
 
-char imageFileName[50];
 
 void getUserChoice(); // Starting function
 void loadImage(); // Get the image file name and load it
@@ -109,7 +108,7 @@ void getUserChoice() {
 
 void loadImage() {
 
-
+    char imageFileName[50];
 
     // Get gray scale image file name
     cout << "Enter the source image file name: ";
@@ -124,6 +123,16 @@ void loadImage() {
 // Action s
 void saveImage() {
 
+    char imageFileName[100];
+
+    // Get gray scale image target file name
+    cout << "Enter the target image file name: ";
+    cin >> imageFileName;
+
+    // Add to it .bmp extension and load image
+    strcat (imageFileName, ".bmp");
+    writeGSBMP(imageFileName, image);
+    
 }
 
 // Action 2
