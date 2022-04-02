@@ -1,3 +1,9 @@
+/*
+Student with smallest ID does filters 1, 4, 7, a - Mohamed
+Student with middle ID does filters 2, 5, 8, b - Seif
+Student with biggest does filters 3, 6, 9, c - Youssef
+ */
+
 #include <iostream>
 #include "bmplib.cpp"
 
