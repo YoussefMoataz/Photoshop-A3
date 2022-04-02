@@ -149,6 +149,31 @@ void shuffleImage() {
 // Action 3 - Youssef
 void mergeFilter() {
 
+    cout << "Please enter name of image file to merge with:";
+    char otherImage [100];
+
+    cin >> otherImage;
+    strcat(otherImage, ".bmp");
+
+    unsigned char image2[SIZE][SIZE];
+    readGSBMP(otherImage, image2);
+
+    unsigned char merged[SIZE][SIZE];
+
+    for (int i = 0; i < SIZE; ++i) {
+
+        for (int j = 0; j < SIZE; ++j) {
+
+            merged[i][j] = (image[i][j] + image2[i][j]) / 2;
+
+        }
+
+    }
+
+    char imageFileNameOutput[100] = "Merged-";
+    strcat(imageFileNameOutput, imageFileName);
+    writeGSBMP(imageFileNameOutput, merged);
+
 }
 
 // Action 6 - Youssef
