@@ -164,21 +164,29 @@ void flipImage() {
 // Action 6 - Youssef
 void rotateImage() {
 
-    unsigned char mat2[SIZE][SIZE];
+    cout << "Rotate (90), (180) or (360) degrees?";
+    int degree;
+    cin >> degree;
 
-    for (int i = 0; i < SIZE; ++i) {
+    if (degree == 90) {
 
-        for (int j = 0; j < SIZE; ++j) {
+        unsigned char mat2[SIZE][SIZE];
 
-            mat2[j][SIZE - 1 - i] = image[i][j];
+        for (int i = 0; i < SIZE; ++i) {
+
+            for (int j = 0; j < SIZE; ++j) {
+
+                mat2[j][SIZE - 1 - i] = image[i][j];
+
+            }
 
         }
 
-    }
+        char imageFileNameOutput[100] = "Rotated-";
+        strcat(imageFileNameOutput, imageFileName);
+        writeGSBMP(imageFileNameOutput, mat2);
 
-    char imageFileNameOutput[100] = "Rotated-";
-    strcat (imageFileNameOutput, imageFileName);
-    writeGSBMP(imageFileNameOutput, mat2);
+    }
 
 }
 
