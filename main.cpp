@@ -6,7 +6,6 @@ Student with biggest does filters 3, 6, 9, c - Youssef
 ////
 #include <iostream>
 #include <cstring>
-#include <iomanip>
 #include "bmplib.cpp"
 
 using namespace std;
