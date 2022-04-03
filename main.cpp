@@ -202,7 +202,7 @@ void darkenAndLightenImage() {
 
 }
 
-// Action 8
+// Action 8 - Seif
 void enlargeImage() {
 
         
@@ -290,7 +290,7 @@ void enlargeImage() {
 
 }
 
-// Action b
+// Action b - Seif
 void shuffleImage() {
     
     string quarters;
@@ -681,19 +681,31 @@ void blackAndWhiteFilter() {
         }
     }
 
+    for (int i = 0; i < SIZE; i++) {
+
+        for (int j = 0; j < SIZE; j++) {
+            if (image[i][j] > 127) {
+                image[i][j] = 255;
+            } else {
+                image[i][j] = 0;
+            }
+        }
+
+    }
+
 }
 
-// Action 4
+// Action 4 - Mohamed
 void flipImage() {
 
 }
 
-// Action 7
+// Action 7 - Mohamed
 void detectImageEdges() {
 
 }
 
-// Action a
+// Action a - Mohamed
 void mirrorImage() {
 
 }
