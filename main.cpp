@@ -205,7 +205,7 @@ void darkenAndLightenImage() {
 // Action 8 - Seif
 void enlargeImage() {
 
-        
+
     int choice;
     unsigned char enlargedImage[SIZE][SIZE];
 
@@ -255,7 +255,7 @@ void enlargeImage() {
                 enlargedImage[i][j+1] = image[n][k];
                 enlargedImage[i+1][j+1] = image[n][k];
             }
-        }   
+        }
     }
     else if(choice == 4)
     {
@@ -285,7 +285,7 @@ void enlargeImage() {
 
 // Action b - Seif
 void shuffleImage() {
-    
+
     string quarters;
     cout << "New order of quarters ? " << endl;
 
@@ -303,7 +303,7 @@ void shuffleImage() {
     {
         cout << "loop number " << i+1 << "n = " << n << "k = " << k << endl;
         if(isdigit(quarters[i]))
-        {   
+        {
             c += 1;
 
             (c & 2 == 1) ? r = 0 : r = 128;
@@ -311,9 +311,9 @@ void shuffleImage() {
             (c <= 2) ? n = 0 : n = 128;
 
             if(quarters[i] == '1')
-            {   
+            {
                 for (int i = 0; i < 128; i++, n++)
-                {   
+                {
                     k = r;
                     for(int j = 0; j < 128; j++, k++)
                     {
@@ -344,7 +344,7 @@ void shuffleImage() {
                 }
             }
             else if(quarters[i] == '4')
-            { 
+            {
                 for (int i = 128; i < SIZE; i++, n++)
                 {
                     k = r;
@@ -682,8 +682,45 @@ void blackAndWhiteFilter() {
 
 // Action 4 - Mohamed
 void flipImage() {
+    char choice;
+    bool valid;
+    int temp;
+    do{
+    cout << "Would you like to flip the image (V)ertically or (H)orizontally [Please select the respective letter]" << endl;
+    cin >> choice;
+    if (choice == 'H'){
+        for (int i = 0; i < SIZE; i++){
+            for (int j = 0; j < SIZE/2; j++){
+                temp = image[i][j];
+                image[i][j] = image[i][SIZE - 1 - j];
+                image[i][SIZE - 1 - j] = temp;
+                valid = true;
+        }
+    }
+    }
+    else if (choice == 'V'){
+            for (int i = 0; i < SIZE/2; i++){
+                for (int j = 0; j < SIZE; j++){
+                    temp = image[i][j];
+                    image[i][j] = image[SIZE - 1 - i][j];
+                    image[SIZE - 1 - i][j] = temp;
+                    valid = true;
+            }
+        }
+    }
+    else {
+        cout << "Please select a valid letter (V or H)" << endl;;
+        valid = false;
+    }
+    }
 
+        while (valid == false);
 }
+
+
+
+
+
 
 // Action 7 - Mohamed
 void detectImageEdges() {
