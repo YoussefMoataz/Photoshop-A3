@@ -146,23 +146,20 @@ void saveImage() {
 // Action 2 - Seif
 void invertFilter() {
 
-    for(int i = 0; i < SIZE; i++)
-    {
-        for(int j = 0; j < SIZE; j++)
-        {
-            if(image[i][j] == 0)
-            {
+    for (int i = 0; i < SIZE; i++) {
+
+        for (int j = 0; j < SIZE; j++) {
+
+            if (image[i][j] == 0) {
                 image[i][j] = 255;
-            }
-            else if (image[i][j] == 255)
-            {
+            } else if (image[i][j] == 255) {
                 image[i][j] = 0;
-            }
-            else
-            {
+            } else {
                 image[i][j] = 255 - image[i][j];
             }
+
         }
+
     }
 
 }
@@ -177,33 +174,31 @@ void darkenAndLightenImage() {
 
     cin >> choice;
 
-    if (choice == 'd' || choice == 'D')
-    {
-        for(int i = 0; i < SIZE; i++)
-        {
-            for(int j = 0; j < SIZE; j++)
-            {
+    if (choice == 'd' || choice == 'D') {
+
+        for (int i = 0; i < SIZE; i++) {
+
+            for (int j = 0; j < SIZE; j++) {
                 image[i][j] -= (image[i][j] * 0.5);
             }
+
         }
-    }
-    else if (choice == 'l' || choice == 'L')
-    {
-        for(int i = 0; i < SIZE; i++)
-        {
-            for(int j = 0; j < SIZE; j++)
-            {
-                if(image[i][j] <= 200)
-                {
+
+    } else if (choice == 'l' || choice == 'L') {
+
+        for (int i = 0; i < SIZE; i++) {
+
+            for (int j = 0; j < SIZE; j++) {
+                if (image[i][j] <= 200) {
                     image[i][j] += 50;
                 }
             }
+
         }
-    }
-    else
-    {
+
+    } else {
         cout << "Wrong input" << endl;
-    } 
+    }
 
 }
 
