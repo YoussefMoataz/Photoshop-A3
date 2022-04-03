@@ -205,6 +205,82 @@ void darkenAndLightenImage() {
 // Action 8
 void enlargeImage() {
 
+        
+    int choice;
+    unsigned char enlargedImage[SIZE][SIZE];
+
+    cout << "Which quarter to enlarge 1, 2, 3 or 4 ? " << endl;
+    cin >> choice;
+
+    if(choice == 1)
+    {
+        int n = 0;
+        for (int i = 0; i < SIZE; i+=2, n++)
+        {
+            int k = 0;
+            for(int j = 0; j < SIZE; j+=2, k++)
+            {
+                enlargedImage[i][j] = image[n][k];
+                enlargedImage[i+1][j] = image[n][k];
+                enlargedImage[i][j+1] = image[n][k];
+                enlargedImage[i+1][j+1] = image[n][k];
+            }
+        }
+    }
+    else if(choice == 2)
+    {
+        int n = 0;
+        for (int i = 0; i < SIZE; i+=2, n++)
+        {
+            int k = 127;
+            for(int j = 0; j < SIZE; j+=2, k++)
+            {
+                enlargedImage[i][j] = image[n][k];
+                enlargedImage[i+1][j] = image[n][k];
+                enlargedImage[i][j+1] = image[n][k];
+                enlargedImage[i+1][j+1] = image[n][k];
+            }
+        }
+    }
+    else if(choice == 3)
+    {
+     int n = 127;
+        for (int i = 0; i < SIZE; i+=2, n++)
+        {
+            int k = 0;
+            for(int j = 0; j < SIZE; j+=2, k++)
+            {
+                enlargedImage[i][j] = image[n][k];
+                enlargedImage[i+1][j] = image[n][k];
+                enlargedImage[i][j+1] = image[n][k];
+                enlargedImage[i+1][j+1] = image[n][k];
+            }
+        }   
+    }
+    else if(choice == 4)
+    {
+        int n = 127;
+        for (int i = 0; i < SIZE; i+=2, n++)
+        {
+            int k = 127;
+            for(int j = 0; j < SIZE; j+=2, k++)
+            {
+                enlargedImage[i][j] = image[n][k];
+                enlargedImage[i+1][j] = image[n][k];
+                enlargedImage[i][j+1] = image[n][k];
+                enlargedImage[i+1][j+1] = image[n][k];
+            }
+        }
+    }
+
+    for (int i = 0; i < SIZE; i++)
+        {
+            for (int j = 0; j < SIZE; j++)
+            {
+                image[i][j] = enlargedImage[i][j];
+            }
+        }
+
 }
 
 // Action b
