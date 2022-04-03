@@ -244,12 +244,6 @@ void enlargeImage() {
     }
     else if(choice == 3)
     {
-
-        cout << "Wrong input" << endl;
-    }
-
-}
-
      int n = 127;
         for (int i = 0; i < SIZE; i+=2, n++)
         {
@@ -278,7 +272,6 @@ void enlargeImage() {
             }
         }
     }
-
 
     for (int i = 0; i < SIZE; i++)
         {
@@ -672,14 +665,6 @@ void blurImage() {
 
 // Action 1 - Mohamed
 void blackAndWhiteFilter() {
-    for (int i = 0; i < SIZE; i++){
-        for (int j = 0; j < SIZE; j++){
-            if (image[i][j] > 127)
-                image[i][j] = 255;
-            else
-                image[i][j] = 0;
-        }
-    }
 
     for (int i = 0; i < SIZE; i++) {
 
