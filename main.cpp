@@ -285,6 +285,94 @@ void enlargeImage() {
 
 // Action b
 void shuffleImage() {
+    
+    string quarters;
+    cout << "New order of quarters ? " << endl;
+
+    cin.ignore();
+    getline(cin, quarters);
+
+    unsigned char shuffledImage[SIZE][SIZE];
+    int n = 0;
+    int k = 0;
+    int c = 0;
+    int r = 0;
+
+    cout << "lenght   " << quarters.length() << endl;
+    for(int i = 0; i < quarters.length(); i++)
+    {
+        cout << "loop number " << i+1 << "n = " << n << "k = " << k << endl;
+        if(isdigit(quarters[i]))
+        {   
+            c += 1;
+
+            (c & 2 == 1) ? r = 0 : r = 128;
+
+            (c <= 2) ? n = 0 : n = 128;
+
+            if(quarters[i] == '1')
+            {   
+                for (int i = 0; i < 128; i++, n++)
+                {   
+                    k = r;
+                    for(int j = 0; j < 128; j++, k++)
+                    {
+                        shuffledImage[n][k] = image[i][j];
+                    }
+                }
+            }
+            else if(quarters[i] == '2')
+            {
+                for (int i = 0; i < 128; i++, n++)
+                {
+                    k = r;
+                    for(int j = 128; j < SIZE; j++, k++)
+                    {
+                        shuffledImage[n][k] = image[i][j];
+                    }
+                }
+            }
+            else if(quarters[i] == '3')
+            {
+                for (int i = 128; i < SIZE; i++, n++)
+                {
+                    k = r;
+                    for(int j = 0; j < 128; j++, k++)
+                    {
+                        shuffledImage[n][k] = image[i][j];
+                    }
+                }
+            }
+            else if(quarters[i] == '4')
+            { 
+                for (int i = 128; i < SIZE; i++, n++)
+                {
+                    k = r;
+                    for(int j = 128; j < SIZE; j++, k++)
+                    {
+                        shuffledImage[n][k] = image[i][j];
+                    }
+                }
+            }
+            else
+            {
+                cout << "Wrong input" << endl;
+            }
+        }
+        else
+        {
+            continue;
+        }
+    }
+
+    cout << "I'm out " << endl;
+    for (int i = 0; i < SIZE; i++)
+        {
+            for (int j = 0; j < SIZE; j++)
+            {
+                image[i][j] = shuffledImage[i][j];
+            }
+        }
 
 }
 
