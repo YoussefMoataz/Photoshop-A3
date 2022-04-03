@@ -167,7 +167,7 @@ void invertFilter() {
 
 }
 
-// Action 5
+// Action 5 - Seif
 void darkenAndLightenImage() {
 
     char choice;
