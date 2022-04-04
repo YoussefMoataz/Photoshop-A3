@@ -717,11 +717,6 @@ void flipImage() {
         while (valid == false);
 }
 
-
-
-
-
-
 // Action 7 - Mohamed
 void detectImageEdges() {
 
