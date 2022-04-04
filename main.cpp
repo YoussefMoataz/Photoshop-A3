@@ -688,7 +688,7 @@ void flipImage() {
     do{
     cout << "Would you like to flip the image (V)ertically or (H)orizontally [Please select the respective letter]" << endl;
     cin >> choice;
-    if (choice == 'H'){
+    if (choice == 'H' || choice == 'h'){
         for (int i = 0; i < SIZE; i++){
             for (int j = 0; j < SIZE/2; j++){
                 temp = image[i][j];
@@ -698,7 +698,7 @@ void flipImage() {
         }
     }
     }
-    else if (choice == 'V'){
+    else if (choice == 'V' || choice == 'v'){
             for (int i = 0; i < SIZE/2; i++){
                 for (int j = 0; j < SIZE; j++){
                     temp = image[i][j];
@@ -714,7 +714,7 @@ void flipImage() {
     }
     }
 
-        while (valid == false);
+        while (!valid);
 }
 
 // Action 7 - Mohamed
