@@ -1,15 +1,27 @@
 /*
-Student with smallest ID does filters 1, 4, 7, a - Mohamed
-Student with middle ID does filters 2, 5, 8, b - Seif
-Student with biggest does filters 3, 6, 9, c - Youssef
- */
-////
+------ FCAI - Programming 1 - 2022 - Assignment 3 ------
+
+Program Name:           Photoshop-A3
+Program Purpose:        Edit 256*256 greyscale images.
+Program Description:    This program edits 256*256 greyscale images by adding filters to them.
+                        It has 12 filters that can be applied to the images.
+
+Author 1, ID, Group:    Youssef Moataz  -- 20210488 -- Group A - S4
+Author 2, ID, Group:    Seif Ibrahim    -- 20210164 -- Group A - S3
+Author 3, ID, Group:    Mohamed Essam   -- 20210582 -- Group A - S4
+Teaching assistants:    Eng. Yousra Ayman, Eng. Nesma Mohamed
+
+Last Modification:      April 8, 2022
+Version:                v1.11.2
+*/
+
 #include <iostream>
 #include <cstring>
 #include "bmplib.cpp"
 
 using namespace std;
 
+// Master image matrix
 unsigned char image[SIZE][SIZE];
 
 void getUserChoice(); // Starting function
