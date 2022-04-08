@@ -679,6 +679,18 @@ void flipImage() {
 
 // Action 7 - Mohamed
 void detectImageEdges() {
+    blackAndWhiteFilter();
+    for (int i = 0; i < SIZE; i++){
+        for (int j = 0; j < SIZE; j++){
+            if (image[i][j] != image[i][j+1]){
+                image [i][j] = 0;
+            }
+            else{
+                image[i][j] = 255;
+            }
+        }
+    }
+
 
 }
 
