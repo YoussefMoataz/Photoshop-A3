@@ -709,6 +709,49 @@ void detectImageEdges() {
 // Action a - Mohamed
 void mirrorImage() {
 
+    char selection;
+    bool valid;
+    do{
+        cout << "Please select which half you'd like to mirror by selecting the respective letter! [(L)eft, (R)ight, (T)op, or (B)ottom]" << endl;
+        cin >> selection;
+        selection = toupper(selection);
+        if (selection == 'L' || selection == 'R' || selection == 'T' || selection == 'B'){
+            valid = true;
+        }
+        else{
+            cout << "Sorry, that's an invalid letter" << endl;
+        }
+    }
+    while (!valid);
+    if (selection == 'L'){
+        for (int i = 0; i < SIZE; i++){
+            for (int j = 0; j < SIZE / 2; j++){
+                image[i][SIZE - j] = image[i][j];
+            }
+        }
+    }
+    else if (selection == 'R'){
+        for (int i =  0; i < SIZE; i++){
+            for (int j = SIZE / 2; j < SIZE; j++){
+                image[i][SIZE - j] = image[i][j];
+            }
+        }
+    }
+    else if (selection == 'T'){
+        for (int i = 0; i < SIZE / 2; i++){
+            for (int j = 0; j < SIZE; j++){
+                image[SIZE - i][j] = image[i][j];
+            }
+        }
+    }
+    else if (selection == 'B'){
+        for (int i = SIZE / 2; i < SIZE; i++){
+            for (int j = 0; j < SIZE; j++){
+                image[SIZE - i][j] = image[i][j];
+            }
+        }
+    }
+
 }
 
 // End of the file
