@@ -158,20 +158,12 @@ void saveImage() {
 // Action 2 - Seif
 void invertFilter() {
 
-    for (int i = 0; i < SIZE; i++) {
-
-        for (int j = 0; j < SIZE; j++) {
-
-            if (image[i][j] == 0) {
-                image[i][j] = 255;
-            } else if (image[i][j] == 255) {
-                image[i][j] = 0;
-            } else {
-                image[i][j] = 255 - image[i][j];
-            }
-
+    for(int i = 0; i < SIZE; i++)
+    {
+        for(int j = 0; j < SIZE; j++)
+        {
+            image[i][j] = 255 - image[i][j];
         }
-
     }
 
 }
@@ -293,13 +285,13 @@ void shuffleImage() {
     int c = 0;
     int r = 0;
 
-    cout << "lenght   " << quarters.length() << endl;
     for (int i = 0; i < quarters.length(); i++) {
-        cout << "loop number " << i + 1 << "n = " << n << "k = " << k << endl;
+        
         if (isdigit(quarters[i])) {
+
             c += 1;
 
-            (c & 2 == 1) ? r = 0 : r = 128;
+            (c % 2 == 1) ? r = 0 : r = 128;
 
             (c <= 2) ? n = 0 : n = 128;
 
@@ -339,7 +331,6 @@ void shuffleImage() {
         }
     }
 
-    cout << "I'm out " << endl;
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             image[i][j] = shuffledImage[i][j];
