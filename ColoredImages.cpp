@@ -165,7 +165,7 @@ void invertFilter() {
             for (int k = 0; k < RGB; k++) {
 
                 image[i][j][k] = 255 - image[i][j][k];
-                
+
             }
 
         }
@@ -190,34 +190,31 @@ void darkenAndLightenImage() {
 
             for (int j = 0; j < SIZE; j++) {
 
-                for(int k = 0; k < RGB; k++)
-                {
+                for (int k = 0; k < RGB; k++) {
                     image[i][j][k] -= (image[i][j][k] * 0.5);
                 }
-                
+
             }
 
         }
 
     } else if (choice == 'l' || choice == 'L') {
 
-         for (int i = 0; i < SIZE; i++) {
+        for (int i = 0; i < SIZE; i++) {
 
-             for (int j = 0; j < SIZE; j++) {
-                
-                for(int k = 0; k < RGB; k++)
-                {
+            for (int j = 0; j < SIZE; j++) {
+
+                for (int k = 0; k < RGB; k++) {
                     if (image[i][j][k] <= 150) {
                         image[i][j][k] += 50;
-                    }
-                    else if (image[i][j][k] <= 200) {
+                    } else if (image[i][j][k] <= 200) {
                         image[i][j][k] += 25;
-                    } 
+                    }
                 }
-                
+
             }
 
-         }
+        }
 
     } else {
         cout << "Wrong input" << endl;
@@ -239,7 +236,7 @@ void enlargeImage() {
         for (int i = 0; i < SIZE; i += 2, n++) {
             int k = 0;
             for (int j = 0; j < SIZE; j += 2, k++) {
-                for(int r = 0; r < RGB; r++){
+                for (int r = 0; r < RGB; r++) {
                     enlargedImage[i][j][r] = image[n][k][r];
                     enlargedImage[i + 1][j][r] = image[n][k][r];
                     enlargedImage[i][j + 1][r] = image[n][k][r];
@@ -252,7 +249,7 @@ void enlargeImage() {
         for (int i = 0; i < SIZE; i += 2, n++) {
             int k = 127;
             for (int j = 0; j < SIZE; j += 2, k++) {
-                for(int r = 0; r < RGB; r++){
+                for (int r = 0; r < RGB; r++) {
                     enlargedImage[i][j][r] = image[n][k][r];
                     enlargedImage[i + 1][j][r] = image[n][k][r];
                     enlargedImage[i][j + 1][r] = image[n][k][r];
@@ -265,7 +262,7 @@ void enlargeImage() {
         for (int i = 0; i < SIZE; i += 2, n++) {
             int k = 0;
             for (int j = 0; j < SIZE; j += 2, k++) {
-                for(int r = 0; r < RGB; r++){
+                for (int r = 0; r < RGB; r++) {
                     enlargedImage[i][j][r] = image[n][k][r];
                     enlargedImage[i + 1][j][r] = image[n][k][r];
                     enlargedImage[i][j + 1][r] = image[n][k][r];
@@ -278,7 +275,7 @@ void enlargeImage() {
         for (int i = 0; i < SIZE; i += 2, n++) {
             int k = 127;
             for (int j = 0; j < SIZE; j += 2, k++) {
-                for(int r = 0; r < RGB; r++){
+                for (int r = 0; r < RGB; r++) {
                     enlargedImage[i][j][r] = image[n][k][r];
                     enlargedImage[i + 1][j][r] = image[n][k][r];
                     enlargedImage[i][j + 1][r] = image[n][k][r];
@@ -290,7 +287,7 @@ void enlargeImage() {
 
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
-            for(int k = 0; k < RGB; k++){
+            for (int k = 0; k < RGB; k++) {
                 image[i][j][k] = enlargedImage[i][j][k];
             }
         }
@@ -312,89 +309,66 @@ void shuffleImage() {
     int k = 0;
     int c = 0;
     int r = 0;
-    
-    for(int i = 0; i < quarters.length(); i++)
-    {
-        if(isdigit(quarters[i]))
-        {   
+
+    for (int i = 0; i < quarters.length(); i++) {
+        if (isdigit(quarters[i])) {
             c += 1;
 
             (c % 2 == 1) ? r = 0 : r = 128;
 
             (c <= 2) ? n = 0 : n = 128;
 
-            if(quarters[i] == '1')
-            {   
-                for (int i = 0; i < 128; i++, n++)
-                {   
+            if (quarters[i] == '1') {
+                for (int i = 0; i < 128; i++, n++) {
                     k = r;
-                    for(int j = 0; j < 128; j++, k++)
-                    {
-                        for(int g = 0; g < RGB; g++){
+                    for (int j = 0; j < 128; j++, k++) {
+                        for (int g = 0; g < RGB; g++) {
                             shuffledImage[n][k][g] = image[i][j][g];
                         }
                     }
                 }
-            }
-            else if(quarters[i] == '2')
-            {
-                for (int i = 0; i < 128; i++, n++)
-                {
+            } else if (quarters[i] == '2') {
+                for (int i = 0; i < 128; i++, n++) {
                     k = r;
-                    for(int j = 128; j < SIZE; j++, k++)
-                    {
-                        for(int g = 0; g < RGB; g++){
+                    for (int j = 128; j < SIZE; j++, k++) {
+                        for (int g = 0; g < RGB; g++) {
                             shuffledImage[n][k][g] = image[i][j][g];
                         }
                     }
                 }
-            }
-            else if(quarters[i] == '3')
-            {
-                for (int i = 128; i < SIZE; i++, n++)
-                {
+            } else if (quarters[i] == '3') {
+                for (int i = 128; i < SIZE; i++, n++) {
                     k = r;
-                    for(int j = 0; j < 128; j++, k++)
-                    {
-                        for(int g = 0; g < RGB; g++){
+                    for (int j = 0; j < 128; j++, k++) {
+                        for (int g = 0; g < RGB; g++) {
                             shuffledImage[n][k][g] = image[i][j][g];
                         }
                     }
                 }
-            }
-            else if(quarters[i] == '4')
-            { 
-                for (int i = 128; i < SIZE; i++, n++)
-                {
+            } else if (quarters[i] == '4') {
+                for (int i = 128; i < SIZE; i++, n++) {
                     k = r;
-                    for(int j = 128; j < SIZE; j++, k++)
-                    {
-                        for(int g = 0; g < RGB; g++){
+                    for (int j = 128; j < SIZE; j++, k++) {
+                        for (int g = 0; g < RGB; g++) {
                             shuffledImage[n][k][g] = image[i][j][g];
                         }
                     }
                 }
-            }
-            else
-            {
+            } else {
                 cout << "Wrong input" << endl;
             }
-        }
-        else
-        {
+        } else {
             continue;
         }
     }
 
-    for (int i = 0; i < SIZE; i++)
-        {
-            for (int j = 0; j < SIZE; j++)
-            {
-                for(int g = 0; g < RGB; g++){
-                    image[i][j][g] = shuffledImage[i][j][g];
-                }
-            }   
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            for (int g = 0; g < RGB; g++) {
+                image[i][j][g] = shuffledImage[i][j][g];
+            }
         }
+    }
 }
 
 // Action 3 - Youssef
@@ -551,7 +525,7 @@ void shrinkImage() {
 
     unsigned char mat2[SIZE][SIZE][3];
 
-    int scale = (int)shrinkRatio[2] - 48;
+    int scale = (int) shrinkRatio[2] - 48;
 
     if (scale > 0 && scale < 10) {
         int m = 0, n = 0;
@@ -637,117 +611,169 @@ void blurImage() {
 // Action 1 - Mohamed
 void blackAndWhiteFilter() {
 
-//    for (int i = 0; i < SIZE; i++) {
-//
-//        for (int j = 0; j < SIZE; j++) {
-//            if (image[i][j] > 127) {
-//                image[i][j] = 255;
-//            } else {
-//                image[i][j] = 0;
-//            }
-//        }
-//
-//    }
+    int sum = 0;
+
+    for (int i = 0; i < SIZE; i++) {
+
+        for (int j = 0; j < SIZE; j++) {
+
+            // get the average of the three colors
+            for (int k = 0; k < 3; k++) {
+
+                sum += image[i][j][k] / 3;
+
+            }
+
+            // set the average color to the greyscale image
+            for (int k = 0; k < 3; k++) {
+
+                image[i][j][k] = sum;
+
+            }
+
+            // reset the sum
+            sum = 0;
+
+        }
+
+    }
 
 }
 
 // Action 4 - Mohamed
 void flipImage() {
 
-//    char choice;
-//    bool valid;
-//    int temp;
-//    do {
-//        cout << "Would you like to flip the image (V)ertically or (H)orizontally [Please select the respective letter]"
-//             << endl;
-//        cin >> choice;
-//        if (choice == 'H' || choice == 'h') {
-//            for (int i = 0; i < SIZE; i++) {
-//                for (int j = 0; j < SIZE / 2; j++) {
-//                    temp = image[i][j];
-//                    image[i][j] = image[i][SIZE - 1 - j];
-//                    image[i][SIZE - 1 - j] = temp;
-//                    valid = true;
-//                }
-//            }
-//        } else if (choice == 'V' || choice == 'v') {
-//            for (int i = 0; i < SIZE / 2; i++) {
-//                for (int j = 0; j < SIZE; j++) {
-//                    temp = image[i][j];
-//                    image[i][j] = image[SIZE - 1 - i][j];
-//                    image[SIZE - 1 - i][j] = temp;
-//                    valid = true;
-//                }
-//            }
-//        } else {
-//            cout << "Please select a valid letter (V or H)" << endl;;
-//            valid = false;
-//        }
-//    } while (!valid);
+    char choice;
+    bool valid;
+    int temp;
+    do {
+        cout << "Would you like to flip the image (V)ertically or (H)orizontally [Please select the respective letter]"
+             << endl;
+        cin >> choice;
+        if (choice == 'H' || choice == 'h') {
+
+            for (int i = 0; i < SIZE; i++) {
+
+                for (int j = 0; j < SIZE / 2; j++) {
+
+                    for (int k = 0; k < 3; ++k) {
+
+                        temp = image[i][j][k];
+                        image[i][j][k] = image[i][SIZE - 1 - j][k];
+                        image[i][SIZE - 1 - j][k] = temp;
+                        valid = true;
+
+                    }
+
+                }
+
+            }
+
+        } else if (choice == 'V' || choice == 'v') {
+
+            for (int i = 0; i < SIZE / 2; i++) {
+
+                for (int j = 0; j < SIZE; j++) {
+
+                    for (int k = 0; k < 3; ++k) {
+
+                        temp = image[i][j][k];
+                        image[i][j][k] = image[SIZE - 1 - i][j][k];
+                        image[SIZE - 1 - i][j][k] = temp;
+                        valid = true;
+
+                    }
+
+                }
+
+            }
+
+        } else {
+            cout << "Please select a valid letter (V or H)" << endl;;
+            valid = false;
+        }
+    } while (!valid);
 
 }
 
 // Action 7 - Mohamed
 void detectImageEdges() {
 
-//    blackAndWhiteFilter();
-//    for (int i = 0; i < SIZE; i++){
-//        for (int j = 0; j < SIZE; j++){
-//            if (image[i][j] != image[i][j+1]){
-//                image [i][j] = 0;
-//            }
-//            else{
-//                image[i][j] = 255;
-//            }
-//        }
-//    }
+    blackAndWhiteFilter();
+
+    for (int i = 0; i < SIZE; i++) {
+
+        for (int j = 0; j < SIZE; j++) {
+
+            if (image[i][j][0] != image[i][j + 1][0]) {
+                image[i][j][0] = 0;
+                image[i][j][1] = 0;
+                image[i][j][2] = 0;
+            } else {
+                image[i][j][0] = 255;
+                image[i][j][1] = 255;
+                image[i][j][2] = 255;
+            }
+
+        }
+
+    }
 
 }
 
 // Action a - Mohamed
 void mirrorImage() {
 
-//    char selection;
-//    bool valid;
-//    do{
-//        cout << "Please select which half you'd like to mirror by selecting the respective letter! [(L)eft, (R)ight, (T)op, or (B)ottom]" << endl;
-//        cin >> selection;
-//        if (selection == 'L' || selection == 'R' || selection == 'T' || selection == 'B'){
-//            valid = true;
-//        }
-//        else{
-//            cout << "Sorry, that's an invalid letter" << endl;
-//        }
-//    }
-//    while (!valid);
-//    if (selection == 'L'){
-//        for (int i = 0; i < SIZE; i++){
-//            for (int j = 0; j < SIZE / 2; j++){
-//                image[i][SIZE - j] = image[i][j];
-//            }
-//        }
-//    }
-//    else if (selection == 'R'){
-//        for (int i =  0; i < SIZE; i++){
-//            for (int j = SIZE / 2; j < SIZE; j++){
-//                image[i][SIZE - j] = image[i][j];
-//            }
-//        }
-//    }
-//    else if (selection == 'T'){
-//        for (int i = 0; i < SIZE / 2; i++){
-//            for (int j = 0; j < SIZE; j++){
-//                image[SIZE - i][j] = image[i][j];
-//            }
-//        }
-//    }
-//    else if (selection == 'B'){
-//        for (int i = SIZE / 2; i < SIZE; i++){
-//            for (int j = 0; j < SIZE; j++){
-//                image[SIZE - i][j] = image[i][j];
-//            }
-//        }
-//    }
+    char selection;
+    bool valid;
+    do{
+        cout << "Please select which half you'd like to mirror by selecting the respective letter! [(L)eft, (R)ight, (T)op, or (B)ottom]" << endl;
+        cin >> selection;
+        selection = toupper(selection);
+        if (selection == 'L' || selection == 'R' || selection == 'T' || selection == 'B'){
+            valid = true;
+        }
+        else{
+            cout << "Sorry, that's an invalid letter" << endl;
+        }
+    }
+    while (!valid);
+    if (selection == 'L'){
+        for (int i = 0; i < SIZE; i++){
+            for (int j = 0; j < SIZE / 2; j++){
+                for (int k = 0; k < 3; ++k) {
+                    image[i][SIZE - j][k] = image[i][j][k];
+                }
+            }
+        }
+    }
+    else if (selection == 'R'){
+        for (int i =  0; i < SIZE; i++){
+            for (int j = SIZE / 2; j < SIZE; j++){
+                for (int k = 0; k < 3; ++k) {
+                    image[i][SIZE - j][k] = image[i][j][k];
+                }
+            }
+        }
+    }
+    else if (selection == 'T'){
+        for (int i = 0; i < SIZE / 2; i++){
+            for (int j = 0; j < SIZE; j++){
+                for (int k = 0; k < 3; ++k) {
+                    image[SIZE - i][j][k] = image[i][j][k];
+                }
+            }
+        }
+    }
+    else if (selection == 'B'){
+        for (int i = SIZE / 2; i < SIZE; i++){
+            for (int j = 0; j < SIZE; j++){
+                for (int k = 0; k < 3; ++k) {
+                    image[SIZE - i][j][k] = image[i][j][k];
+                }
+            }
+        }
+    }
 
 }
 
