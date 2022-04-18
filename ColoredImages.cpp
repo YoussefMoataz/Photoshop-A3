@@ -608,7 +608,7 @@ void blurImage() {
 
 }
 
-// Action 1 - Mohamed
+// Action 1 - Youssef
 void blackAndWhiteFilter() {
 
     int sum = 0;
@@ -640,7 +640,7 @@ void blackAndWhiteFilter() {
 
 }
 
-// Action 4 - Mohamed
+// Action 4 - Youssef
 void flipImage() {
 
     char choice;
@@ -696,7 +696,7 @@ void flipImage() {
 
 }
 
-// Action 7 - Mohamed
+// Action 7 - Youssef
 void detectImageEdges() {
 
     blackAndWhiteFilter();
